@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../lib/libprec.a  CMakeFiles/prec.dir/src/base/precision.f90.o
+/usr/bin/ranlib ../lib/libprec.a

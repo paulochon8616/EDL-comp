@@ -1,0 +1,9 @@
+module meshmaking
+	use precision
+	implicit none
+
+	type mesh_grid
+	
+
+
+end module meshmaking

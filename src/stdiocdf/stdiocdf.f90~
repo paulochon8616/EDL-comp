@@ -1,0 +1,38 @@
+module stdiocdf
+
+	use netcdf
+	
+	use precision
+	implicit none
+
+	!-- Declare evrything private by default
+	private
+
+	!-- Declare exported procedure
+	public :: write_var3d
+
+contains
+
+subroutine write_var3d(file_name)
+
+	logical :: file_exist
+	integer(ik) :: ncid
+
+	!-- Check if file exist
+	inquire(file=file_name,exist=file_exist)
+
+	!-- Open/Create file
+	if (file_exist) then
+       call io_check(nf90_open(path=file_name,mode=nf90_write,ncid=ncid))
+       call io_check(nf90_redef(ncid))
+	endif
+
+end subroutine write_var3d
+
+! =========================================================================================
+! == Write 3d variable in a netcdf file													 ==
+! =========================================================================================
+
+
+
+end module stdiocdf
